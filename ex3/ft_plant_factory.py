@@ -5,8 +5,8 @@ class Plant:
         self.height = height
         self.age = age
 
-    def get_info(self) -> str:
-        return (f"{self.name}: {self.height}cm, {self.age} days old")
+    def show(self) -> str:
+        return (f"{self.name}: {self.height:.1f}cm, {self.age} days old")
 
 
 plant_data = [
@@ -19,7 +19,6 @@ plant_data = [
 
 
 def ft_plant_factory():
-    total = 0
     # plant_data.append(("zebra", 20, 60))
     Plants = []
     for data in plant_data:
@@ -27,9 +26,7 @@ def ft_plant_factory():
         # Plants.append(Plant(*data))
     print("=== Plant Factory Output ===")
     for i in Plants:
-        print("Created: ", i.get_info())
-        total += 1
-    print("\nTotal plants created: ", total)
+        print("Created: ", i.show())
 
 
 if __name__ == "__main__":

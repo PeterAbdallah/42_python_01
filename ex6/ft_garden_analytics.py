@@ -12,6 +12,13 @@ class Plant():
     def print_message(self):
         print(f"- {self.name}: {self.height} cm")
 
+    @staticmethod
+    def is_older_than_year(age: int):
+        if (age > 365):
+            print(f"Is {age} days more than a year? -> True")
+        else:
+            print(f"Is {age} days more than a year? -> False")
+
 
 class FloweringPlant(Plant):
     def __init__(self, name, height, age, color):
@@ -119,10 +126,15 @@ class GardenManager():
 
 
 def ft_garden_analytics():
-    print("=== Garden Management System Demo ===\n")
     manager = GardenManager.create_garden_network()
     manager.gardens[0].grow_plants()
     manager.GardenStats.generate_report(manager.gardens[0], manager)
+    print("=== Garden statistics ===")
+    print("=== Check year-old")
+    Plant.is_older_than_year(30)
+    Plant.is_older_than_year(400)
+    # i stopped here
+    print("=== Flower")
     print(f"Height validation test:{manager.GardenStats.height_validation(5)}")
     print("Garden scores - Alice: 208, Bob: 92")
     print(f"Total gardens managed: {len(manager.gardens)}")

@@ -6,7 +6,7 @@ class Plant:
         self.height = height
         self.age = age
 
-    def get_info(self):
+    def show(self):
         print(f"{self.name}: {self.height}cm, {self.age} days old")
 
 
@@ -20,7 +20,7 @@ Plants = [
 def ft_garden_data():
     print("=== Garden Plant Registry ===")
     for i in Plants:
-        i.get_info()
+        i.show()
 
 
 if __name__ == "__main__":
