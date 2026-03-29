@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 class Plant:
-    def __init__(self, name: str, height: int, age: int):
+    def __init__(self, name: str, height: float, age: int):
         self.name = name
         self.height = height
         self.age = age
         self.stats = self.Stats(self.name)
 
-    def show(self) -> str:
+    def show(self):
         print(f"{self.name}: {self.height:.1f}cm, {self.age} days old")
         self.stats.addShow()
 
@@ -50,7 +50,7 @@ class Plant:
 
 
 class Flower(Plant):
-    def __init__(self, name: str, height: int, age: int, color: str):
+    def __init__(self, name: str, height: float, age: int, color: str):
         super().__init__(name, height, age)
         self.color = color
         self.blooming = False
@@ -68,7 +68,8 @@ class Flower(Plant):
 
 
 class Tree(Plant):
-    def __init__(self, name: str, height: int, age: int, trunk_diameter: int):
+    def __init__(self, name: str, height: float, age: int,
+                 trunk_diameter: int):
         super().__init__(name, height, age)
         self.trunk_diameter = trunk_diameter
 
@@ -77,7 +78,7 @@ class Tree(Plant):
  long and {self.trunk_diameter:.1f}cm wide.")
         self.stats.addShade()
 
-    def show(self) -> str:
+    def show(self):
         super().show()
         print(f"Trunk diameter: {self.trunk_diameter:0.1f}cm")
 
@@ -95,22 +96,19 @@ class Tree(Plant):
 
 
 class Vegetable(Plant):
-    def __init__(self, name: str, height: int, age: int,
+    def __init__(self, name: str, height: float, age: int,
                  harvest_season: str, nutritional_value):
         super().__init__(name, height, age)
         self.harvest_season = harvest_season
         self.nutritional_value = nutritional_value
 
-    def show(self) -> str:
+    def show(self):
         super().show()
         print(f"Harvest season: {self.harvest_season}")
         print(f"Nutritional value: {self.nutritional_value}")
 
-    def grow(self, growth: int, age: int):
+    def grow(self, growth: int):
         super().grow(growth)
-        super().age_plant(age)
-        print(f"[make {self.name} grow and age for {age} days]")
-        self.nutritional_value += age
 
 
 class Seed(Flower):

@@ -58,11 +58,12 @@ class Vegetable(Plant):
         print(f"Harvest season: {self.harvest_season}")
         print(f"Nutritional value: {self.nutritional_value}")
 
-    def grow(self, growth: int, age: int):
+    def grow(self, growth: int):
         super().grow(growth)
-        super().age_plant(age)
-        print(f"[make {self.name} grow and age for {age} days]")
-        self.nutritional_value += age
+
+    def age_plant(self, days):
+        super().age_plant(days)
+        self.nutritional_value += days
 
 
 def ft_plant_types():
@@ -78,7 +79,9 @@ def ft_plant_types():
     oak.produce_shade()
     print("\n=== Vegetable")
     tomato.show()
-    tomato.grow(42, 20)
+    print(f"[make {tomato.name} grow and age for 20 days]")
+    tomato.grow(42)
+    tomato.age_plant(20)
     tomato.show()
 
 
