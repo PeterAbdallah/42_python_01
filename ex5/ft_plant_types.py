@@ -5,7 +5,7 @@ class Plant:
         self.height = height
         self.age = age
 
-    def show(self) -> str:
+    def show(self):
         print(f"{self.name}: {self.height:.1f}cm, {self.age} days old")
 
     def grow(self, growth: int):
@@ -26,7 +26,7 @@ class Flower(Plant):
         self.show()
         print(f"{self.name} is blooming beautifully!\n")
 
-    def show(self) -> str:
+    def show(self):
         super().show()
         print(f"Color: {self.color}")
 
@@ -38,10 +38,10 @@ class Tree(Plant):
 
     def produce_shade(self):
         print(f"[asking the {self.name} to produce shade]")
-        print(f"Tree {self.name} now produces shade of {self.height:.1f}cm\
- long and{self.trunk_diameter:.1f}cm wide.\n")
+        print(f"Tree {self.name} now produces a shade of {self.height:.1f}cm\
+ long and {self.trunk_diameter:.1f}cm wide.\n")
 
-    def show(self) -> str:
+    def show(self):
         super().show()
         print(f"Trunk diameter: {self.trunk_diameter:0.1f}cm")
 
@@ -53,7 +53,7 @@ class Vegetable(Plant):
         self.harvest_season = harvest_season
         self.nutritional_value = nutritional_value
 
-    def show(self) -> str:
+    def show(self):
         super().show()
         print(f"Harvest season: {self.harvest_season}")
         print(f"Nutritional value: {self.nutritional_value}")
