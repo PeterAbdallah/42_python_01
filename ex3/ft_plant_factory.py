@@ -9,24 +9,21 @@ class Plant:
         return (f"{self.name}: {self.height:.1f}cm, {self.age} days old")
 
 
-plant_data = [
-    ("Rose", 25, 30),
-    ("Oak", 200, 365),
-    ("Cactus", 15, 120),
-    ("Sunflower", 80, 45),
-    ("Fern", 15, 120)
-]
-
-
 def ft_plant_factory():
-    # plant_data.append(("zebra", 20, 60))
-    Plants = []
-    for data in plant_data:
-        Plants.append(Plant(data[0], data[1], data[2]))
-        # Plants.append(Plant(*data))
+    plant_data = [
+        ("Rose", 25, 30),
+        ("Oak", 200, 365),
+        ("Cactus", 5, 90),
+        ("Sunflower", 80, 45),
+        ("Fern", 15, 120)
+    ]
+    plants = []
+    for plant in plant_data:
+        # plants.append(Plant(plant[0], plant[1], plant[2]))
+        plants.append(Plant(*plant))
     print("=== Plant Factory Output ===")
-    for i in Plants:
-        print("Created: ", i.show())
+    for i in plants:
+        print(f"Created: {i.show()}")
 
 
 if __name__ == "__main__":
